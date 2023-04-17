@@ -15,7 +15,10 @@ function setup()
 function draw()
 {
 
-  background("red")
+  background("white")
+  textSize(difference);
+  text("PETER" , 200 , 300 , )
+
 
 }
 
@@ -33,7 +36,15 @@ function gotPoses(results)
  {
  
      console.log(results);
+     leftWristX = results[0].pose.leftWrist.x;
+     rightWristX = results[0].pose.rightWrist.x;
+     difference = floor(leftWristX - rightWristX); 
+     console.log("leftWristX = " + leftWristX + "rightWristX = " + "difference = " + difference);
 
  }
 
 }
+
+difference=0;
+rightWristX=0;
+leftWristX=0;
